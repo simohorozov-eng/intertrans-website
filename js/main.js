@@ -70,28 +70,33 @@ document.addEventListener("DOMContentLoaded", () => {
         nullTargetWarn: false  // Suppress warnings for missing elements
     });
 
-    // Initial Hero Reveal - Premium Upside Down effect
-    const heroTl = gsap.timeline();
-    
-    // Set initial 3D transform state
+    // Initial Hero Reveal — small box expands then text appears
+    gsap.set('.hero', { width: '35%', height: '220px', borderRadius: '16px' });
     gsap.set('.reveal-word', { rotationX: -180, opacity: 0, y: -50 });
-    
-    heroTl.to('.reveal-word',
-        { 
-            rotationX: 0, 
-            opacity: 1, 
+    gsap.set('.hero-bottom', { opacity: 0, y: 20 });
+
+    const heroTl = gsap.timeline();
+
+    heroTl
+        .to('.hero', {
+            width: '100%',
+            height: '80vh',
+            borderRadius: '30px',
+            duration: 1.4,
+            ease: 'power3.inOut'
+        })
+        .to('.reveal-word', {
+            rotationX: 0,
+            opacity: 1,
             y: 0,
-            duration: 1.2, 
+            duration: 1.2,
             stagger: 0.15,
-            ease: "back.out(1.2)", 
-            delay: 0.2 
-        }
-    )
-    .fromTo('.hero-bottom',
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1 },
-        "-=0.5"
-    );
+            ease: 'back.out(1.2)'
+        }, '-=0.3')
+        .to('.hero-bottom',
+            { opacity: 1, y: 0, duration: 1 },
+            '-=0.8'
+        );
 
     // Scroll Reveal Elements (Fade Up) — with lazy rendering
     const fadeUpElements = document.querySelectorAll('.fade-up');
