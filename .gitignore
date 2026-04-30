@@ -1,0 +1,6 @@
+node_modules/
+_backups/
+.claude/
+*.py
+optimize-images.js
+package-lock.json

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Intertrans — Grain trading, brokerage and maritime transport services. Over 25 years of expertise connecting global agricultural markets.">
+    <title>Intertrans | Grain Trading, Brokerage & Transport</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/style.css" as="style">
+    
+    <!-- Google Fonts — swap to avoid FOIT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Favicon placeholder -->
+    <link rel="icon" href="data:,">
+</head>
+<body>
+
+    <!-- Grain Overlay — performance-optimised -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="main-nav">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#" class="logo" aria-label="Intertrans Home">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>INTERTRANS</span>
+                </a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="#about">What we do</a></li>
+                    <li><a href="#services">Who we are</a></li>
+                    <li><a href="cargo.html">Cargo</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+            </div>
+            <div class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+        <div class="hero">
+            <!-- Poster image for instant visual while video loads -->
+            <video class="hero-video" autoplay loop muted playsinline preload="metadata" poster="pictures/silos.jpg">
+                <source src="videos/intertrnas video.mp4" type="video/mp4">
+            </video>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="reveal-word">We</span> 
+                    <span class="reveal-word">Grow</span> 
+                    <span class="reveal-word">Together</span>
+                </h1>
+            </div>
+
+            <!-- Bottom Elements -->
+            <div class="hero-bottom">
+                <div class="hero-scroll-btn" id="scroll-btn" role="button" tabindex="0" aria-label="Scroll to next section">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M12 5V19M12 19L5 12M12 19L19 12"/>
+                    </svg>
+                    <span>Scroll</span>
+                </div>
+                <div class="hero-subtext">
+                    <p>Providing efficient solutions for the global</p>
+                    <p>agricultural and bulk commodities markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Us In Numbers Section -->
+    <section id="numbers" class="numbers section-padding">
+        <div class="container">
+            <div class="numbers-header fade-up">
+                <h2 class="section-title">Who we are / Us in Numbers</h2>
+                <div class="numbers-nav">
+                    <button class="nav-btn prev" aria-label="Previous">&larr;</button>
+                    <button class="nav-btn next" aria-label="Next">&rarr;</button>
+                </div>
+            </div>
+            
+            <div class="numbers-grid">
+                <!-- Revenue Card -->
+                <div class="number-card fade-up" style="background-image: url('pictures/1.jpg');">
+                    <div class="nc-overlay"></div>
+                    <div class="nc-content">
+                        <span class="nc-label">Revenue</span>
+                        <div class="nc-value">
+                            EUR <span class="stat-number" data-target="130">0</span> M
+                        </div>
+                        <p class="nc-desc">The income statement for 2025 shows a revenue of approx. EUR 130 M.</p>
+                    </div>
+                </div>
+
+                <!-- Commodities Transported Card -->
+                <div class="number-card fade-up" style="background-image: url('pictures/2.jpg');">
+                    <div class="nc-overlay"></div>
+                    <div class="nc-content">
+                        <span class="nc-label">Commodities Transported</span>
+                        <div class="nc-value">
+                            <span class="stat-number" data-target="1234072">0</span>
+                        </div>
+                        <p class="nc-desc">Transporting over 1.2 million tons of commodities per year globally.</p>
+                    </div>
+                </div>
+
+                <!-- Fleet Card -->
+                <div class="number-card fade-up" style="background-image: url('pictures/3.jpg');">
+                    <div class="nc-overlay"></div>
+                    <div class="nc-content">
+                        <span class="nc-label">Fleet</span>
+                        <div class="nc-value">
+                            <span class="stat-number" data-target="5">0</span>
+                        </div>
+                        <p class="nc-desc">operating a fleet of 3-10 owned and long-term chartered vessels ranging from coaster to panamax size.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Value Chain / Silos Pinned Section -->
+    <section class="silos-wrapper" id="value-chain">
+        <div class="silos-container">
+            <div class="silos-image-wrapper">
+                <img src="pictures/silos.jpg" alt="Silos" class="silos-image" loading="lazy" decoding="async">
+            </div>
+            
+            <div class="silos-hero-text">
+                <h2>Heritage,<br>Agility</h2>
+            </div>
+            
+            <!-- The story text that appears as you scroll -->
+            <div class="story-text-container">
+                <div class="story-inner">
+                    <div class="story-title-group">
+                        <div class="story-label">
+                            <span class="triangle"></span> ABOUT
+                        </div>
+                        <h2>Our Heritage,<br>Global Agility</h2>
+                    </div>
+                    <div class="story-content">
+                        <p>With over 25 years of deep industry expertise, Intertrans was founded by maritime professionals dedicated to redefining global logistics. What began as a focused maritime operation has steadily evolved into a comprehensive maritime and commodities partner.</p>
+                        <p>Today, we proudly operate a versatile fleet of owned and long-term chartered vessels while continuing to offer top-tier ship brokerage services.</p>
+                        <p>Driven by our commitment to growth and client success, we have successfully expanded our footprint into global grain trading and specialized agricultural brokerage. This strategic expansion allows us to seamlessly cover the entire value chain, bridging the gap between producers and global markets.</p>
+                        <p>At the very core of Intertrans is a steadfast belief in partnership. We recognize that true success is built on a foundation of reliability, transparency, and trust. By fostering enduring relationships with our clients and global partners, we ensure that every cargo is handled with the utmost care and professional integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Services / Expertise Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="services-header fade-up">
+                <h2 class="section-title">Our Expertise</h2>
+                <p>Comprehensive solutions across the supply chain.</p>
+            </div>
+            
+            <div class="accordion">
+                <!-- Grain Trading -->
+                <div class="accordion-item fade-up">
+                    <div class="accordion-header">
+                        <h3>Grain Trading</h3>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We source and supply high-quality grains worldwide, ensuring food security and market stability. Our extensive network allows us to navigate complex global markets efficiently.</p>
+                    </div>
+                </div>
+                
+                <!-- Brokerage -->
+                <div class="accordion-item fade-up">
+                    <div class="accordion-header">
+                        <h3>Brokerage</h3>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Acting as the vital link between buyers and sellers, our brokerage services provide transparent, reliable, and competitive pricing for bulk agricultural commodities.</p>
+                    </div>
+                </div>
+
+                <!-- Transport Services -->
+                <div class="accordion-item fade-up">
+                    <div class="accordion-header">
+                        <h3>Transport Services</h3>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>End-to-end maritime and inland transport solutions. From chartering vessels to managing port logistics, we ensure your cargo arrives safely and on time.</p>
+                    </div>
+                </div>
+
+                <!-- Market Analysis -->
+                <div class="accordion-item fade-up">
+                    <div class="accordion-header">
+                        <h3>Market Analysis</h3>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Data-driven insights and strategic intelligence to help our partners navigate market volatility, optimize supply chains, and make informed trading decisions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>INTERTRANS</span>
+                    </a>
+                    <p>Grain Trading, Brokerage & Transport Services.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Expertise</a></li>
+                        <li><a href="#market">Market Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>trade@inter-trans.co</p>
+                    <p>chertering@inter-trans.co</p>
+                    <p>+359878222892</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Intertrans. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP — moved to bottom, loaded async/defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
