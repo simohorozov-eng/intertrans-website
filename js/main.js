@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 0. Scroll Button
+    // 0. Hamburger mobile menu
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // 1. Scroll Button
     const scrollBtn = document.querySelector('.hero-scroll-btn');
     if (scrollBtn) {
         scrollBtn.addEventListener('click', () => {
@@ -71,7 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Initial Hero Reveal — small box expands then text appears
-    gsap.set('.hero', { width: '35%', height: '220px', borderRadius: '16px' });
+    const isMobile = window.innerWidth <= 768;
+    gsap.set('.hero', {
+        width: isMobile ? '88%' : '35%',
+        height: isMobile ? '160px' : '220px',
+        borderRadius: '16px'
+    });
     gsap.set('.reveal-word', { rotationX: -180, opacity: 0, y: -50 });
     gsap.set('.hero-bottom', { opacity: 0, y: 20 });
 
@@ -80,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     heroTl
         .to('.hero', {
             width: '100%',
-            height: '80vh',
+            height: isMobile ? '75vh' : '80vh',
             borderRadius: '30px',
             duration: 1.4,
             ease: 'power3.inOut'

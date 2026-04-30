@@ -739,15 +739,76 @@ img {
 }
 
 /* ==========================================================================
+   Hamburger & Mobile Menu
+   ========================================================================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger .line {
+    width: 24px;
+    height: 2px;
+    background-color: var(--clr-text);
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    display: block;
+}
+
+.hamburger.active .line:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger.active .line:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--clr-bg);
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.mobile-menu.open {
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--clr-text);
+    transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: var(--clr-accent);
+}
+
+/* ==========================================================================
    Responsive Design
    ========================================================================== */
 @media (max-width: 992px) {
-    .nav-links {
-        display: none; /* simple mobile hide for now */
-    }
-    .hamburger {
-        display: flex;
-    }
+    .nav-links { display: none; }
+    .nav-center, .nav-right { display: none; }
+    .nav-container { grid-template-columns: 1fr auto; }
+    .hamburger { display: flex; }
+
+    .hero-wrapper { padding: calc(var(--nav-height) + 10px) 15px 30px 15px; }
+
     .about-grid, .footer-grid {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -758,26 +819,63 @@ img {
         flex-direction: row;
         gap: 30px;
     }
-    .numbers-grid {
-        grid-template-columns: 1fr;
-    }
-    .number-card {
-        height: 400px;
-    }
-    .cargo-grid {
-        grid-template-columns: 1fr;
-    }
+    .numbers-grid { grid-template-columns: 1fr; }
+    .number-card { height: 400px; }
+    .cargo-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
     .section-padding { padding: 10vh 0; }
-    .hero-title { margin-bottom: 30px; }
-    .accordion-header { padding: 25px 0; }
-    .about-stats { flex-direction: column; }
+
+    /* Hero */
+    .hero { height: 75vh; }
+    .hero-title {
+        font-size: clamp(2.8rem, 10vw, 8rem);
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        margin-bottom: 0;
+    }
     .hero-bottom {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 15px;
         padding: 0 25px;
+        bottom: 25px;
+    }
+    .hero-subtext { font-size: 0.9rem; }
+
+    /* Silos section */
+    .silos-image-wrapper {
+        width: 88vw;
+        height: 45vh;
+    }
+    .silos-hero-text {
+        left: 50%;
+        top: 12%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 90%;
+    }
+    .silos-hero-text h2 { font-size: clamp(2.5rem, 8vw, 4rem); }
+    .story-text-container { padding: 0 5vw; }
+    .story-inner { padding-left: 20px; }
+    .story-inner h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
+    .story-content p { font-size: 0.85rem; }
+
+    /* Numbers */
+    .numbers-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .numbers-nav { display: none; }
+
+    /* Accordion */
+    .accordion-header { padding: 25px 0; }
+    .about-stats { flex-direction: column; }
+
+    /* Footer */
+    .footer { padding: 60px 0 30px; }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
 }
