@@ -1,5 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 0. Hamburger mobile menu
+    // 0. Smooth scroll for all anchor nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            const targetId = link.getAttribute('href');
+            if (targetId === '#top') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                const navHeight = document.getElementById('main-nav')?.offsetHeight || 90;
+                const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 1. Hamburger mobile menu
     const hamburger = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
