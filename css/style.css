@@ -149,6 +149,12 @@ img {
     color: var(--clr-text);
 }
 
+.nav-logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
