@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://intertrans-website.vercel.app/sitemap.xml
+Sitemap: https://inter-trans.co/sitemap.xml
