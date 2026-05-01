@@ -111,13 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initial Hero Reveal — small box expands then text appears
     const isMobile = window.innerWidth <= 768;
-    const heroVideo = document.querySelector('.hero-video');
-
-    // Pause video during expansion to reduce GPU load
-    if (heroVideo) {
-        heroVideo.pause();
-        heroVideo.style.opacity = '0';
-    }
 
     gsap.set('.hero', {
         width: isMobile ? '88%' : '35%',
@@ -135,13 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             height: isMobile ? '75vh' : '80vh',
             borderRadius: '30px',
             duration: 1.4,
-            ease: 'power3.inOut',
-            onComplete: () => {
-                if (heroVideo) {
-                    heroVideo.play();
-                    gsap.to(heroVideo, { opacity: 1, duration: 0.5 });
-                }
-            }
+            ease: 'power3.inOut'
         })
         .to('.reveal-word', {
             rotationX: 0,
