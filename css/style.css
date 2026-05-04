@@ -149,6 +149,19 @@ img {
     color: var(--clr-text);
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-sub {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #999;
+    letter-spacing: 0.05em;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
