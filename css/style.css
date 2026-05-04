@@ -152,7 +152,6 @@ img {
 .logo-img {
     height: 70px;
     width: auto;
-    mix-blend-mode: multiply;
 }
 
 .nav-links {
