@@ -4,3 +4,5 @@ _backups/
 *.py
 optimize-images.js
 package-lock.json
+
+.vercel
